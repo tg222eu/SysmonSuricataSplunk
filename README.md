@@ -17,4 +17,4 @@ sysmon64.exe -accepteula -i sysmonconfig-export.xml
 ```
 If a custom xml is used then I recommend SwiftOnSecurity configuration file as, it filters out unnecessary noise its consider a best practice and then can be further customized according to the enterprise needs. The config can be found here: https://github.com/SwiftOnSecurity/sysmon-config
 
-Install splunk forwarder on the machine with sysmon. Once installed there will be a configuration file which need to be edited in order to index the sysmon logs correctly once sent. 
+Install splunk forwarder on the machine with sysmon. You can also install "Splunk Add-on for microsoft sysmon" on your server for enhanced field mapping. (s Once the forwarder is installed on the sysmon machine there will be a configuration file which need to be edited in order to index the sysmon logs correctly once sent.
