@@ -73,5 +73,9 @@ Open up the configuration file
 ```
 sudo vim /etc/suricata/suricata.yaml
 ```
-![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/suricatayaml.png)
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/suricatayaml.png) <br>
 By typing "/" you can search for "HOME_NET". There you have to change the IP number to the network subnet you want to monitor. In my case its 192.168.4.0/24.
+
+Its likely that the interface is not set to the machines inferface and has to be added. Search for /af-packet within VIM and check to make sure the interface is correct. The interface should match the name of the interface thats shown up in “ifconfig”. example my case was ens160
+
+
