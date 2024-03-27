@@ -40,3 +40,13 @@ You can restart splunkforwarder in services and the logs should appear immediate
 ![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/SplunkSysmon.png)
 
 Here we can see XmlWinEventLog which is our sysmon logs
+
+# Suricata
+
+Install Suricata on a Ubuntu server with the commands below
+```
+sudo add-apt-repository ppa:oisf/suricata-stable
+sudo apt-get update
+sudo apt-get install suricata
+```
+
