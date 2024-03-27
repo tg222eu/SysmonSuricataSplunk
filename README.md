@@ -4,6 +4,8 @@ For this lab we will install Sysmon and Suricata to then forward the logs to Spl
 
 Prerequisite: Splunk server, splunk forwarder installed
 
+Note: Suricata is installed on a linux os and just sends the logs as raw data which might not be the most suitable solution, but it gives a great insite on how it works on Linux for educational purpose.
+
 # Sysmon
 Sysmon is a great complement and extends windows event logs and is especially useful for threat hunting in an enviroment that does not monitor with EDR.
 
