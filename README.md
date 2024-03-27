@@ -49,4 +49,19 @@ sudo add-apt-repository ppa:oisf/suricata-stable
 sudo apt-get update
 sudo apt-get install suricata
 ```
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/suricataversion.png)
 
+You can check the version just to see if its working as it should
+```
+suricata-update check-versions
+```
+
+Enable Suricata on startup. Remember to stop or restart the service in when changing configuration
+```
+sudo systemctl enable suricata.service
+```
+Useful commands
+```
+sudo systemctl start suricata
+sudo systemctl stop suricata
+```
