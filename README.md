@@ -65,3 +65,13 @@ Useful commands
 sudo systemctl start suricata
 sudo systemctl stop suricata
 ```
+# Configure Suricata
+
+All configuration are stored in the suricata.yaml file. This file is huge, but we only need to configure IP and interfaces.
+
+Open up the configuration file
+```
+sudo vim /etc/suricata/suricata.yaml
+```
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/suricataversion.png)
+By typing "/" you can search for "HOME_NET". There you have to change the IP number to the network subnet you want to monitor. In my case its 192.168.4.0/24.
