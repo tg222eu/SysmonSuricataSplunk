@@ -73,5 +73,5 @@ Open up the configuration file
 ```
 sudo vim /etc/suricata/suricata.yaml
 ```
-![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/suricataversion.png)
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/suricatayaml.png)
 By typing "/" you can search for "HOME_NET". There you have to change the IP number to the network subnet you want to monitor. In my case its 192.168.4.0/24.
