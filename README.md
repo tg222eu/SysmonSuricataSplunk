@@ -78,4 +78,25 @@ By typing "/" you can search for "HOME_NET". There you have to change the IP num
 
 Its likely that the interface is not set to the machines inferface and has to be added. Search for /af-packet within VIM and check to make sure the interface is correct. The interface should match the name of the interface thats shown up in “ifconfig”. example my case was ens160
 
+Optionally its recommended to change the interface for the pcap section aswell and enable community-id to true.
 
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/suricatayaml.png)
+We need to update Suricata in order for it to create additional configuration and rule files. Right now they are missing. When updating and it detects no rules selected and it will choose the default, the “Emerging Threats Open” ruleset will be used. rules.emergingthreats.net.
+```
+sudo suricata-update
+```
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/suricataruleset.png)
+Suricata do provide a default ruleset. This ruleset monitors a lot of data and can be filtered out further. There are other ruleset included that you can use which is often created by open source projects or for commercial use that require subscription. You can check the available rules by typing
+```
+sudo suricata-update list-sources
+```
+To use another ruleset rather then the default one, we can use “tgreen/hunting” as example, use the command below
+
+sudo suricata-update enable-source tgreen/hunting
+
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/suricataruletest.png)
+
+To test the rules you can run a test with command below and check if the rules load successfully or fails, or check for any other issues
+```
+sudo suricata -T -c /etc/suricata/suricata.yaml -v
+```
