@@ -2,9 +2,17 @@
 
 For this lab we will install Sysmon and Suricata to then forward the logs to Splunk
 
-Prerequisite: Splunk server, splunk forwarder installed
+Prerequisite: Splunk server, Splunk Forwarder installed on the sysmon machine
 
 Note: Suricata is installed on a linux os and just sends the logs as raw data which might not be the most suitable solution, but it gives a great insite on how it works on Linux for educational purpose. The eve.json file will not be useful in Splunk
+
+The lab is divided into 5 sections:
+
+1. Installing sysmon
+2. Installing suricata
+3. Configure Suricata
+4. Creating your first rule
+5. Send Suricata logs to Splunk
 
 # Sysmon
 Sysmon is a great complement and extends windows event logs and is especially useful for threat hunting in an enviroment that does not monitor with EDR.
