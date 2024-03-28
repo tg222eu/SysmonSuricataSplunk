@@ -100,3 +100,13 @@ To test the rules you can run a test with command below and check if the rules l
 ```
 sudo suricata -T -c /etc/suricata/suricata.yaml -v
 ```
+
+The actual intrusion logs are stored in /var/log/suricata/fast.log
+eve.json are the same but in json format
+
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/testids.png)
+
+To test the IDS type command below the check the result in fast.log
+```
+curl http://testmynids.org/uid/index.html
+```
