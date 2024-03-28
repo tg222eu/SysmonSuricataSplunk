@@ -151,7 +151,7 @@ sudo suricata -c /etc/suricata/suricata.yaml -i ens160
 ![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/ICMPping.png)<br>
 Onces everything runs as it should there should be a ICMP alert from the rule we just created in the fast.log file. 
 
-# Suricata to Splunk
+# Suricata logs to Splunk
 
 Install Suricata Universal Forwarder on the suricata machine
 ```
