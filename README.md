@@ -128,3 +128,13 @@ Now we have the rule local.rules, we need to configure suricata to read the cust
 ```
 sudo vim /etc/suricata/suricata.yaml
 ```
+Search for /rule-path
+
+Update the rule path as /usr/share/suricata/rules/local.rules where you created the file. To make sure the rule is loaded properly, restart the suricata service in systemctl.
+
+Test ping from a client that is monitored by suricata and see if it generates logs
+
+If this dosnt go through, a really useful command to check if there is any syntax error in the rule. Run command below and replace [eth] with your own interface
+```
+sudo suricata -c /etc/suricata/suricata.yaml -i ens160
+```
