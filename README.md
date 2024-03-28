@@ -140,5 +140,5 @@ If this dosnt go through, a really useful command to check if there is any synta
 ```
 sudo suricata -c /etc/suricata/suricata.yaml -i ens160
 ```
-![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/ICMPping.png)
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/ICMPping.png)<br>
 Onces everything runs as it should there should be a ICMP alert from the rule we just created in the fast.log file. 
