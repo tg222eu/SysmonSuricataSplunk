@@ -124,3 +124,7 @@ Write down your first rule. This rule with monitor from any to any network
 ```
 alert icmp any any -> $HOME_NET any (msg:”ICMP Ping”; sid:1; rev:1;)
 ```
+Now we have the rule local.rules, we need to configure suricata to read the custom rule file. Open the suricata.yaml configuration file
+```
+sudo vim /etc/suricata/suricata.yaml
+```
