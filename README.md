@@ -110,3 +110,17 @@ To test the IDS type command below the check the result in fast.log
 ```
 curl http://testmynids.org/uid/index.html
 ```
+# Create your first alert rule
+
+Lets create a custom ICMP alert rule
+
+Some rules are stored in /etc/suricata/rules in Linux. For ubuntu its usr/share/suricata/rules
+```
+sudo vim /usr/share/suricata/rules/local.rules
+```
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/localrule.png)
+
+Write down your first rule. This rule with monitor from any to any network
+```
+alert icmp any any -> $HOME_NET any (msg:”ICMP Ping”; sid:1; rev:1;)
+```
