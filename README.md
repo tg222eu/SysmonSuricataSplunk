@@ -4,7 +4,7 @@ For this lab we will install Sysmon and Suricata to then forward the logs to Spl
 
 Prerequisite: Splunk server, splunk forwarder installed
 
-Note: Suricata is installed on a linux os and just sends the logs as raw data which might not be the most suitable solution, but it gives a great insite on how it works on Linux for educational purpose.
+Note: Suricata is installed on a linux os and just sends the logs as raw data which might not be the most suitable solution, but it gives a great insite on how it works on Linux for educational purpose. The eve.json file will not be useful in Splunk
 
 # Sysmon
 Sysmon is a great complement and extends windows event logs and is especially useful for threat hunting in an enviroment that does not monitor with EDR.
@@ -142,3 +142,28 @@ sudo suricata -c /etc/suricata/suricata.yaml -i ens160
 ```
 ![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/ICMPping.png)<br>
 Onces everything runs as it should there should be a ICMP alert from the rule we just created in the fast.log file. 
+
+# Suricata to Splunk
+
+Install Suricata Universal Forwarder on the suricata machine
+```
+wget -O splunkforwarder-9.2.0.1-d8ae995bf219-linux-2.6-amd64.deb "https://download.splunk.com/products/universalforwarder/releases/9.2.0.1/linux/splunkforwarder-9.2.0.1-d8ae995bf219-linux-2.6-amd64.deb"
+sudo dpkg -i <package path>
+```
+Start Splunk
+```
+cd /opt/splunkforwarder/bin/
+sudo ./splunk start –accept-license
+```
+Set admin and password, then make it start on boot
+```
+sudo systemctl start SplunkForwarder
+```
+Configure the IP address of Splunk server
+```
+./splunk add forward-server [IP address of splunk server:9997]
+```
+Choose what log files/folder from the Ubuntu Server should be sent to Splunk
+```
+./splunk add monitor -auth username:password /var/log/suricata
+```
