@@ -134,7 +134,11 @@ Update the rule path as /usr/share/suricata/rules/local.rules where you created 
 
 Test ping from a client that is monitored by suricata and see if it generates logs
 
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/succesfulrule.png)
+
 If this dosnt go through, a really useful command to check if there is any syntax error in the rule. Run command below and replace ens160 with your own interface
 ```
 sudo suricata -c /etc/suricata/suricata.yaml -i ens160
 ```
+![alt text](https://github.com/tg222eu/SysmonSuricataSplunk/blob/main/pictures/ICMPping.png)
+Onces everything runs as it should there should be a ICMP alert from the rule we just created in the fast.log file. 
